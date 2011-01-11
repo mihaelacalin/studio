@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: nmaves
+Build-Jdk: 1.6.0_22
+Specification-Title: mybatis
+Specification-Version: 3.0.3-SNAPSHOT
+Specification-Vendor: MyBatis.org
+Implementation-Title: mybatis
+Implementation-Version: 3.0.3-SNAPSHOT
+Implementation-Vendor-Id: org.mybatis
+Implementation-Vendor: MyBatis.org
+Implementation-Build: r${buildNumber}
+Implementation-Build-Date: 2010-10-31 23:18:35-0600
+X-Compile-Source-JDK: 1.5
+X-Compile-Target-JDK: 1.5
+
