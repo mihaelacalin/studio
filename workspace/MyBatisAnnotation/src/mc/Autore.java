@@ -1,8 +1,28 @@
 package mc;
 
+import java.util.Set;
+
 public class Autore {
 	private long id;
 	private String name;
+	private Set<Post> posts;
+	private Set<Commento> comments;
+
+	public Set<Commento> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Commento> comments) {
+		this.comments = comments;
+	}
+
+	public Set<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(Set<Post> posts) {
+		this.posts = posts;
+	}
 
 	public Autore() {
 	}

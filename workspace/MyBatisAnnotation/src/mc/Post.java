@@ -1,12 +1,23 @@
 package mc;
 
+import java.util.Set;
+
 public class Post {
 	private Long id;
 	private Long authorId;
 	private String text;
+	private Set<Commento> comments;
 
 	public Post() {
-	
+
+	}
+
+	public Set<Commento> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Commento> comments) {
+		this.comments = comments;
 	}
 
 	public Long getId() {

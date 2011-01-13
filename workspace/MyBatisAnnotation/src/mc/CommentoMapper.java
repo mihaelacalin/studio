@@ -13,12 +13,18 @@ public interface CommentoMapper {
 	@Insert("insert into Commento(id,authorId,postId,text) values( #{id}, #{authorId}, #{postId},#{text})")
 	void insertCommento(Commento commento);
 
-    @Delete("DELETE FROM Commento WHERE id = #{id}")
-    void deleteCommento(Long id);
+	@Delete("DELETE FROM Commento WHERE id = #{id}")
+	void deleteCommento(Long id);
 
-    @Select("SELECT * FROM Commento WHERE id = #{id}")
-    Commento selectCommento(Long id);
+	@Select("SELECT * FROM Commento WHERE id = #{id}")
+	Commento selectCommento(Long id);
 
-    @Select("SELECT * FROM Commento")
-    List<Commento> selectAllComments();
+	@Select("SELECT * FROM Commento")
+	List<Commento> selectAllComments();
+
+	@Select("SELECT * FROM Commento,Autore WHERE Commento.authorId=Autore.id AND Autore.id=#{id} ")
+	List<Commento> selectAllCommentsOfAuthor(Long id);
+
+	@Select("SELECT * FROM Commento,Post WHERE Commento.postId=Post.id AND Post.id=#{id}")
+	List<Commento> selectAllCommentsOfPost(Long id);
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.ConstructorArgs;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Many;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
@@ -23,6 +24,12 @@ public interface AutoreMapper {
 
     @Select("SELECT * FROM Autore")
     List<Autore> selectAllAuthors();
+    
+    @Select("SELECT * FROM Autore,Post WHERE Autore.id=Post.authorId")
+    List<Autore> selectAuthorOfPost(Long id);
+    
+    @Select("SELECT * FROM Autore,Commento WHERE Autore.id=Commento.authorId")
+    List<Autore> selectAuthorOfComment(Long id);
 
-
+   
 }

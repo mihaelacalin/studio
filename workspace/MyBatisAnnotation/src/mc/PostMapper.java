@@ -21,4 +21,11 @@ public interface PostMapper {
 
     @Select("SELECT * FROM Post")
     List<Post> selectAllPost();
+    
+    @Select("SELECT * FROM Post,Autore WHERE Post.authorId=Autore.id AND Autore.id=#{id}")
+    List<Post> selectAllPostOfAuthor(Long id);
+    
+    @Select("SELECT * FROM Post,Autore WHERE Post.authorId=Autore.id AND Autore.name=#{name}")
+    List<Post> selectAllPostOfAuthor1(String name);
+    
 }
